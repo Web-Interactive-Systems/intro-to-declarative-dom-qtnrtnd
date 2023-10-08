@@ -52,7 +52,7 @@ import { createElement, render } from './mini';
 
  We can, however, customize the factory function using a pragma annotation:
  
- / ** @jsx name_of_custom_function * /
+ / ** jsx name_of_custom_function * /
 
  vite (and esbuild) with then use name_of_custom_function to transpile jsx into dom.
 
@@ -66,9 +66,10 @@ import { createElement, render } from './mini';
 
 */
 
-/** @jsx Todo */
-const component = (
-  <div class='container'>
-    <span>Hello World!</span>
-  </div>
-);
+/** @jsx createElement */
+
+const component = (<div class='container'>
+<span>Hello World</span>
+</div>)
+
+render(component, document.getElementById('app'));
